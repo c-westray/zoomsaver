@@ -23,7 +23,7 @@
     ul {padding-left:1.25rem;}
     a {text-decoration:none;}
 
-    /* ====== Header ====== */
+    /* ====== Header / Hero ====== */
     header {
       background: linear-gradient(135deg,#5c6bc0,#3949ab);
       color:#fff;
@@ -34,33 +34,29 @@
       align-items:center;
       gap:1rem;
     }
-    header img {
-      max-width:150px;
-      width:50%;
-      height:auto;
-    }
     header h1 {
-      font-size:clamp(1.6rem,2.8vw,2.4rem);
+      font-size:clamp(2rem,5vw,3rem);
+      font-weight:bold;
     }
     header p {
-      font-size:1rem;
+      font-size:clamp(1.2rem,2.5vw,1.5rem);
       opacity:.95;
     }
     header a.cta-button {
       display:inline-block;
-      padding:.9rem 1.5rem;
-      background:#fff;
-      color:#3949ab;
+      padding:1rem 2rem;
+      background:#d32f2f;
+      color:#fff;
       border-radius:8px;
       font-weight:bold;
+      font-size:clamp(1rem,2vw,1.25rem);
       text-align:center;
-      min-width:200px;
+      min-width:220px;
       margin-top:1rem;
       transition: background 0.3s, color 0.3s;
     }
     header a.cta-button:hover {
-      background:#3949ab;
-      color:#fff;
+      background:#b71c1c;
     }
 
     /* ====== Main Content ====== */
@@ -69,7 +65,10 @@
       margin:2rem auto;
       padding:0 1rem;
     }
-    h2 {color:#2e3aa8;margin-top:1.5rem;}
+    h2 {color:#2e3aa8;margin-top:2rem;font-size:clamp(1.5rem,3vw,2rem);}
+    h3 {margin-top:1.25rem;font-size:clamp(1.2rem,2.5vw,1.5rem);}
+    p {margin-top:.5rem;font-size:clamp(1rem,2vw,1.2rem);}
+    ul li {margin-top:.5rem;font-size:clamp(1rem,2vw,1.2rem);}
     .cta {display:flex;gap:.6rem;flex-wrap:wrap;align-items:center;justify-content:center;margin:2rem 0;}
     
     /* ====== Footer ====== */
@@ -86,16 +85,16 @@
       header {
         padding:2rem 1rem;
       }
-      header img {
-        max-width:120px;
-        width:60%;
-      }
       header h1 {
-        font-size:1.5rem;
+        font-size:1.8rem;
+      }
+      header p {
+        font-size:1.2rem;
       }
       header a.cta-button {
         width:80%;
         min-width:0;
+        font-size:1.1rem;
       }
     }
   </style>
@@ -104,9 +103,8 @@
 <body>
   <!-- ====== Header / Hero Section ====== -->
   <header>
-    <img src="images/zoomsaver-bulk-download-zoom-recordings.png" alt="ZoomSaver Logo">
     <h1>Bulk Download & Organize Your Zoom Recordings</h1>
-    <p>Automatically save Zoom calls to Google Drive, Box, or iCloud — renamed and organized by client.</p>
+    <p>Instant access for a <strong>one-time $9</strong> fee — full tool forever.</p>
     <a href="https://buy.stripe.com/your-product-link" class="cta-button">Buy ZoomSaver Now</a>
   </header>
 
@@ -134,20 +132,19 @@
       </ul>
     </section>
 
-    <!-- FAQ -->
-<section class="faq">
-  <h2>Why ZoomSaver Works for You</h2>
+    <!-- FAQ / Objection Handling -->
+    <section class="faq">
+      <h2>Common Questions</h2>
 
-  <h3>Worried about downloading recordings one by one?</h3>
-  <p>No need. ZoomSaver fetches all your Zoom cloud recordings in a single click, saving you hours of repetitive work.</p>
+      <h3>Will I really get full access immediately?</h3>
+      <p>Yes! After your one-time $9 payment, you get instant access to all features — bulk downloading, smart renaming, and cloud syncing — forever.</p>
 
-  <h3>Concerned about storing and organizing files?</h3>
-  <p>We handle it automatically. Connect your preferred cloud storage (Google Drive, Box, or iCloud), and all recordings are renamed and organized by client and date.</p>
+      <h3>What if I’m not tech-savvy?</h3>
+      <p>No problem — setup takes less than 5 minutes and you don’t need to write a single line of code.</p>
 
-  <h3>Think setup might be too technical?</h3>
-  <p>It’s simpler than you expect. Setup takes under 5 minutes—no coding or technical skills required.</p>
-</section>
-
+      <h3>What if it doesn’t work for me?</h3>
+      <p>No worries! You’re covered by our <strong>100% money-back guarantee</strong>.</p>
+    </section>
   </main>
 
   <!-- ====== Footer ====== -->
