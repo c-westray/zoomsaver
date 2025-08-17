@@ -42,7 +42,7 @@
       font-size:clamp(1.2rem,2.5vw,1.5rem);
       opacity:.95;
     }
-    header a.cta-button {
+    .cta-button {
       display:inline-block;
       padding:1rem 2rem;
       background:#d32f2f;
@@ -54,8 +54,10 @@
       min-width:220px;
       margin-top:1rem;
       transition: background 0.3s, color 0.3s;
+      border:none;
+      cursor:pointer;
     }
-    header a.cta-button:hover {
+    .cta-button:hover {
       background:#b71c1c;
     }
 
@@ -91,7 +93,7 @@
       header p {
         font-size:1.2rem;
       }
-      header a.cta-button {
+      .cta-button {
         width:80%;
         min-width:0;
         font-size:1.1rem;
@@ -102,16 +104,16 @@
 
 <body>
   <!-- ====== Header / Hero Section ====== -->
-<header>
-  <h1>Bulk Download & Organize Your Zoom Recordings</h1>
-  <h2 style="font-size:clamp(1.5rem,3vw,2rem); color:#ffeb3b; margin-top:0.5rem;">
-    Lifetime Access: $9
-  </h2>
-  <p>Download ZoomSaver for a <strong>one-time $9</strong> fee and get access to all features, forever.</p>
-  <p>No subscriptions, no recurring payments.</p>
-  <a href="https://buy.stripe.com/your-product-link" class="cta-button">Buy ZoomSaver Now</a>
-</header>
-
+  <header>
+    <h1>Bulk Download & Organize Your Zoom Recordings</h1>
+    <h2 style="font-size:clamp(1.5rem,3vw,2rem); color:#ffeb3b; margin-top:0.5rem;">
+      Lifetime Access: $9
+    </h2>
+    <p>Download ZoomSaver for a <strong>one-time $9</strong> fee and get access to all features, forever.</p>
+    
+    <!-- Stripe Checkout Button -->
+    <button id="checkout-button" class="cta-button">Buy ZoomSaver Now</button>
+  </header>
 
   <!-- ====== Main Content ====== -->
   <main class="container" id="content">
@@ -150,15 +152,13 @@
       <h3>What if it doesn’t work for me?</h3>
       <p>No worries! You’re covered by our <strong>100% money-back guarantee</strong>.</p>
 
-<h3>Other questions?</h3>
-<p>
-  Feel free to contact me personally. As the founder of this project, I can be reached at 
-  <a href="https://www.linkedin.com/in/cella-westray" rel="noopener" target="_blank" style="text-decoration:underline; color:#2e3aa8">
-    https://www.linkedin.com/in/cella-westray
-  </a>, 
- by email at: cellawestray@gmail.com or phone at: 763-233-2330.
-</p>
-
+      <h3>Other questions?</h3>
+      <p>
+        Feel free to contact me personally. As the founder of this project, I can be reached at 
+        <a href="https://www.linkedin.com/in/cella-westray" rel="noopener" target="_blank" style="text-decoration:underline; color:#2e3aa8">
+          https://www.linkedin.com/in/cella-westray</a>, 
+        by email at: cellawestray@gmail.com or phone at: 763-233-2330.
+      </p>
     </section>
   </main>
 
@@ -167,5 +167,23 @@
     <p>Bulk download Zoom cloud recordings · Save Zoom to Google Drive · Organize Zoom files by client and meeting</p>
     <p>&copy; 2025 ZoomSaver. All rights reserved.</p>
   </footer>
+
+  <!-- ====== Stripe Checkout Script ====== -->
+  <script src="https://js.stripe.com/v3/"></script>
+  <script>
+    const stripe = Stripe('pk_live_51RscacJ2ZWS7fAJUfxoG68oM6z7AB3mOJ8QVMVOd2cFYTgcnkYb9aVbZxnGAJ62JCCXGtENunLBklLq3sIKrs4e900k6xWz4eG'); // <-- Replace with your Stripe publishable key
+    const button = document.getElementById('checkout-button');
+
+    button.addEventListener('click', () => {
+      stripe.redirectToCheckout({
+        lineItems: [{ price: 'price_1Rx9QQJ2ZWS7fAJU44EJzbRU', quantity: 1 }],
+        mode: 'payment',
+        successUrl: window.location.origin + '/success.html',
+        cancelUrl: window.location.origin + '/cancel.html',
+      }).then((result) => {
+        if (result.error) alert(result.error.message);
+      });
+    });
+  </script>
 </body>
 </html>
