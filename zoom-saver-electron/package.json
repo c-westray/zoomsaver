@@ -1,0 +1,14 @@
+{
+  "name": "zoom-saver-electron",
+  "version": "0.1.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "electron": "^26.0.0",
+    "axios": "^1.5.0",
+    "dotenv": "^16.0.0",
+    "googleapis": "^119.0.0"
+  }
+}
